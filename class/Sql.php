@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Sql extends PDO {
 	private $connection;
@@ -9,16 +9,16 @@ class Sql extends PDO {
 
 	public function setParameters($statement, $parameters = array()){
 		foreach ($parameters as $key => $value) {
-			$this->setParameter($key, $value);
+			$this->setParameter($statement, $key, $value);
 		}
 	}
 	public function setParameter($statement, $key, $value){
-		$statement->bindParam($key, $value);	
+		$statement->bindParam($key, $value);
 	}
 
 	public function query($rawQuery, $parameters = array()){
 		$statement = $this->connection->prepare($rawQuery);
-	
+
 		$this->setParameters($statement, $parameters);
 
 		$statement->execute();
