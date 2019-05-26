@@ -22,3 +22,8 @@ require_once("config.php");
 // $usuario->login("Renato", "1234");
 // echo $usuario;
 
+// Insere dados na tabela.
+// $aluno = new Usuario("aluno", "1234");
+// $aluno->insert();
+// echo $aluno;
+
