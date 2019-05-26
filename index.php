@@ -4,7 +4,7 @@ require_once("config.php");
 
 // Carrega um usuário.
 // $root = new Usuario;
-// $root->loadById(3);
+// $root->loadById(1);
 // echo $root;
 
 // Carrega uma lista de usuários
@@ -22,8 +22,14 @@ require_once("config.php");
 // $usuario->login("Renato", "1234");
 // echo $usuario;
 
-// Insere dados na tabela.
+// Insere dados na tabela
 // $aluno = new Usuario("aluno", "1234");
 // $aluno->insert();
 // echo $aluno;
+
+// Atualiza a tabela
+// $usuario = new Usuario();
+// $usuario->loadById(1);
+// $usuario->update("usuario", "#!@$#512");
+// echo $usuario;
 

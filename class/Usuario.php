@@ -34,7 +34,7 @@ class Usuario
 
   public function loadById($id){
     $sql = new Sql();
-		$results = $sql->selectData("SELECT * FROM usuarios WHERE id = :ID", array(
+		$resultado = $sql->selectData("SELECT * FROM usuarios WHERE id = :ID", array(
 			":ID"=>$id
 		));
     if (count($resultado) > 0)
@@ -89,6 +89,17 @@ class Usuario
     {
       $this->setData($resultado[0]);
     }
+  }
+  public function update($login, $senha)
+  {
+    $this->setLogin($login);
+    $this->setSenha($senha);
+    $sql = new Sql();
+    $sql->query("UPDATE usuarios SET login = :LOGIN, senha = :SENHA WHERE id = :ID", array(
+      ":LOGIN"=>$this->getLogin(),
+      ":SENHA"=>$this->getSenha(),
+      ":ID"=>$this->getId()
+    ));
   }
   public function __construct($login = "", $password = "")
   {
