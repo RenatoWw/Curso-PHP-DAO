@@ -34,7 +34,7 @@ class Usuario
 
   public function loadById($id){
     $sql = new Sql();
-		$resultado = $sql->selectData("SELECT * FROM usuarios WHERE id = :ID", array(
+		$resultado = $sql->selectData("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(
 			":ID"=>$id
 		));
     if (count($resultado) > 0)
@@ -45,20 +45,20 @@ class Usuario
   public function getList()
   {
     $sql = new Sql();
-    return $sql->selectData("SELECT * FROM usuarios ORDER BY login;");
+    return $sql->selectData("SELECT * FROM tb_usuarios ORDER BY deslogin;");
   }
 
   public function search($login)
   {
     $sql = new Sql();
-    return $sql->selectData("SELECT * FROM usuarios WHERE login LIKE :SEARCH ORDER BY login", array(
+    return $sql->selectData("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin", array(
       ':SEARCH'=>"%".$login."%"
     ));
   }
   public function login($login, $password)
   {
     $sql = new Sql();
-    $results = $sql->selectData("SELECT * FROM usuarios WHERE login = :LOGIN AND senha = :PASSWORD", array(
+    $results = $sql->selectData("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN AND dessenha = :PASSWORD", array(
       ":LOGIN"=>$login,
       ":PASSWORD"=>$password
     ));
@@ -72,10 +72,10 @@ class Usuario
   }
   public function setData($dados)
   {
-    $this->setId(($dados['id']));
-    $this->setLogin(($dados['login']));
-    $this->setSenha(($dados['senha']));
-    $this->setCadastro(new DateTime($dados['cadastro']));
+    $this->setId(($dados['idusuario']));
+    $this->setLogin(($dados['deslogin']));
+    $this->setSenha(($dados['dessenha']));
+    $this->setCadastro(new DateTime($dados['dtcadastro']));
 
   }
   public function insert()
@@ -95,7 +95,7 @@ class Usuario
     $this->setLogin($login);
     $this->setSenha($senha);
     $sql = new Sql();
-    $sql->query("UPDATE usuarios SET login = :LOGIN, senha = :SENHA WHERE id = :ID", array(
+    $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :SENHA WHERE idusuario = :ID", array(
       ":LOGIN"=>$this->getLogin(),
       ":SENHA"=>$this->getSenha(),
       ":ID"=>$this->getId()
@@ -104,7 +104,7 @@ class Usuario
   public function delete()
   {
     $sql = new Sql();
-    $sql->query("DELETE FROM usuarios WHERE id = :ID", array(
+    $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
       ":ID"=>$this->getId()
     ));
     $this->setId(0);
