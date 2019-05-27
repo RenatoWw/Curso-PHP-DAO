@@ -2,7 +2,7 @@
 
 require_once("config.php");
 
-// Carrega um usuário.
+// Carrega um usuário
 // $root = new Usuario;
 // $root->loadById(1);
 // echo $root;
@@ -28,8 +28,13 @@ require_once("config.php");
 // echo $aluno;
 
 // Atualiza a tabela
-// $usuario = new Usuario();
+// $usuario = new Usuario;
 // $usuario->loadById(1);
 // $usuario->update("usuario", "#!@$#512");
 // echo $usuario;
 
+// Deleta um usuário
+// $usuario = new Usuario;
+// $usuario->loadById(1);
+// $usuario->delete();
+// echo $usuario;
