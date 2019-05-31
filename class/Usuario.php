@@ -58,7 +58,7 @@ class Usuario
   public function login($login, $password)
   {
     $sql = new Sql();
-    $results = $sql->selectData("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN AND dessenha = :PASSWORD", array(
+    $resultado = $sql->selectData("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN AND dessenha = :PASSWORD", array(
       ":LOGIN"=>$login,
       ":PASSWORD"=>$password
     ));

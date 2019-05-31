@@ -2,9 +2,9 @@
 
 require_once("config.php");
 
-// Carrega um usuário
+// Carrega um Usuario;
 // $root = new Usuario;
-// $root->loadById(1);
+// $root->loadById(3);
 // echo $root;
 
 // Carrega uma lista de usuários
@@ -19,7 +19,7 @@ require_once("config.php");
 
 // Carrega um usuário usando o login e a senha
 // $usuario = new Usuario;
-// $usuario->login("Renato", "1234");
+// $usuario->login("renato", "123");
 // echo $usuario;
 
 // Insere dados na tabela
@@ -29,12 +29,12 @@ require_once("config.php");
 
 // Atualiza a tabela
 // $usuario = new Usuario;
-// $usuario->loadById(1);
+// $usuario->loadById(2);
 // $usuario->update("usuario", "#!@$#512");
 // echo $usuario;
 
 // Deleta um usuário
 // $usuario = new Usuario;
-// $usuario->loadById(1);
+// $usuario->loadById(3);
 // $usuario->delete();
 // echo $usuario;
